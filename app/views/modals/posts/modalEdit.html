@@ -10,8 +10,8 @@
                     <div class="row">
                         <div class="col-12 mb-15">
                             <label>Capa:</label>
-                            <input type="file" name="imagem" class="form-control mb-15" file-model="vm.dados.img">
-                            <button type="button" class="btn btn-info" ng-click="vm.upload(vm.dados.imagem)" ng-disabled="vm.imgIsLoading">
+                            <input type="file" name="imagem" class="form-control mb-15" file-model="vm.dados.imagem">
+                            <button type="button" class="btn btn-info" ng-click="vm.upload(vm.dados.imagem)" ng-disabled="vm.imgIsLoading || !vm.dados.imagem">
                                 <span ng-if="!vm.imgIsLoading"><i class="fas fa-cloud-upload-alt"></i> Upload</span>
                                 <span ng-if="vm.imgIsLoading"><div class="spinner-border spinner-border-sm"></div></span>
                             </button>
@@ -33,14 +33,18 @@
                             </select>
                         </div>
                         <div class="col-12 mb-15">
+                            <label>URL da notícia</label>
+                            <input type="text" class="form-control" ng-model="vm.dados.url" required>
+                        </div>
+                        <div class="col-12 mb-15">
                             <label>Conteúdo</label>
-                            <textarea class="form-control" rows="6" ng-model="vm.dados.conteudo" required></textarea>
+                            <text-angular ng-model="vm.dados.conteudo"></text-angular>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-success">Salvar</button>
-                    <button type="button" class="btn btn-dark" data-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Fechar</button>
                 </div>
             </form>
         </div>

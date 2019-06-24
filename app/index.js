@@ -5,5 +5,8 @@ const app = angular.module('myApp', [
     'ngAnimate',
     'ngSanitize',
     'ngTouch',
-    'toaster'
+    'toaster',
+    'textAngular',
+    'angularUtils.directives.dirPagination',
+    'oc.lazyLoad'
 ])

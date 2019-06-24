@@ -1,50 +1,10 @@
-<div class="jumbotron">
-    <h1 class="text-center">NodeJS + MongoDB</h1>
-</div>
-
-<div class="container">
-    <button type="button" class="btn btn-success mb-30" ng-click="vm.openAdd()"><i class="fas fa-plus"></i> Adicionar</button>
-    <div class="content centraliza" ng-if="vm.isLoading">
-        <div class="spinner-grow" style="width: 3rem; height: 3rem;"></div>
+<div class="panel-content" ng-style="{'background': user.styles.background}">
+    <div class="sidebar-backdrop" ng-class="{'backdrop-active': !sidebarCollapsed}" ng-click="sidebarCollapse()"></div>
+    <div class="jumbotron">
+        <h1 class="text-center">Bem-vindo ao Painel</h1>
     </div>
-    <div class="table-responsive" ng-if="!vm.isLoading">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Título</th>
-                    <th>Autor</th>
-                    <th>Conteúdo</th>
-                    <th>Data postagem</th>
-                    <th>Ativo</th>
-                    <th>Editar/Excluir</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="x in vm.posts | orderBy: 'createdAt'">
-                    <td ng-click="vm.detalhes(x)">{{$index+1}}</td>
-                    <td ng-click="vm.detalhes(x)">{{x.titulo}}</td>
-                    <td ng-click="vm.detalhes(x)">{{x.autor}}</td>
-                    <td ng-click="vm.detalhes(x)">{{x.conteudo | limite}}</td>
-                    <td ng-click="vm.detalhes(x)">{{x.createdAt | date:'dd/MM/yyyy'}}</td>
-                    <td>
-                        <button class="btn btn-light btn-sm" ng-click="vm.ativo(x)">
-                            <i class="fas" ng-class="{'fa-toggle-on': x.ativo, 'fa-toggle-off': !x.ativo}"></i>
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-sm btn-primary" ng-click="vm.openEdit(x)">Editar</button>
-                        <button type="button" class="btn btn-sm btn-danger" ng-click="vm.delete(x)">Excluir</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>    
+    
+    <div class="container-fluid">
+        <p>Ainda não pensei no que colocar nesta seção, então por gentileza, vá para a página de <a ui-sref="noticias">notícias</a></p>
+    </div>
 </div>
-
-<!-- Modal add -->
-<div ng-include="'views/modals/posts/modalAdd.html'"></div>
-<!-- Modal edit -->
-<div ng-include="'views/modals/posts/modalEdit.html'"></div>
-<!-- Modal detalhes -->
-<div ng-include="'views/modals/posts/modalDetalhes.html'"></div>

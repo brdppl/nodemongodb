@@ -8,8 +8,13 @@
 
     app.constant('config', {
         userKey: '_nodejs_mongodb',
+        listarPosts: oapi+'posts',
         posts: api+'posts',
         upload: api+'upload',
-        login: oapi+'login'
+        login: oapi+'login',
+        signup: oapi+'signup',
+        validateToken: oapi+'validateToken',
+        admins: api+'admins',
+        adminSenha: api+'adminSenha'
     })
 })()

@@ -20,6 +20,7 @@ const createPost = router.post('/posts', function(req, res, next) {
         titulo: req.body.titulo,
         conteudo: req.body.conteudo,
         autor: req.body.autor,
+        url: req.body.url,
         img: req.body.img,
         ativo: 0
     })
@@ -57,6 +58,7 @@ const editPost = router.put('/posts/:id', function(req, res, next) {
         titulo: req.body.titulo,
         conteudo: req.body.conteudo,
         autor: req.body.autor,
+        url: req.body.url,
         img: req.body.img,
         ativo: req.body.ativo,
         updatedAt: new Date()

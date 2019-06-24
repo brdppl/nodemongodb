@@ -1,21 +1,42 @@
-const db = require('../config/database')
+const restful = require('node-restful')
+const mongoose = restful.mongoose
 
-const Admins = db.sequelize.define('admins', {
+const adminsSchema = new mongoose.Schema({
     nome: {
-        type: db.Sequelize.STRING
+        type: String,
+        required: true
     },
     sobrenome: {
-        type: db.Sequelize.STRING
+        type: String
     },
     login: {
-        type: db.Sequelize.STRING
-    },
-    email: {
-        type: db.Sequelize.BOOLEAN
+        type: String,
+        required: true
     },
     senha: {
-        type: db.Sequelize.STRING
+        type: String,
+        required: true
+    },
+    ativo: {
+        type: Boolean,
+        default: 0
+    },
+    styles: {
+        type: Object,
+        default: {
+            background: '#ffffff',
+            header: '#333333',
+            sidebar: '#333333'
+        }
+    },
+    foto: {
+        type: String,
+        default: null
+    },
+    master: {
+        type: Boolean,
+        default: 0
     }
 })
 
-module.exports = Admins
+module.exports = restful.model('admins', adminsSchema)

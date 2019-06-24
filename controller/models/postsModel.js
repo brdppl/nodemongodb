@@ -14,11 +14,15 @@ const postsSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    url: {
+        type: String,
+        required: true
+    },
     ativo: {
         type: Boolean,
         default: 0
     },
-    imagem: {
+    img: {
         type: String
     },
     createdAt: {
