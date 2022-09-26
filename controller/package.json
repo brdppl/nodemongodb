@@ -20,6 +20,6 @@
     "mongoose-paginate": "^5.0.3",
     "multer": "^1.4.1",
     "node-restful": "^0.2.6",
-    "pm2": "^3.5.1"
+    "pm2": "^5.2.0"
   }
 }
